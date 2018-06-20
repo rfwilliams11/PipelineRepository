@@ -27,31 +27,31 @@ public class CalculatorServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String n1 = request.getParameter("n1");
-		String n2 = request.getParameter("n2");
-		String op = request.getParameter("operation");
-		//System.out.println(n1+ " " + op + " " + n2);
-		String result = "";
-		double first = Double.parseDouble(n1);
-		double second = Double.parseDouble(n2);
-		switch (op) {
-		case "add": result = ""+ (first+second);
-			break;
-		case "subtract": result = ""+ (first-second);
-			break;
-		case "multiply": result = ""+ (first*second);
-			break;
-		case "divide": result = ""+ (first/second);
-			break;
-		default: result = "Invalid Operation";
-			break;
-		}
+//		String n1 = request.getParameter("n1");
+//		String n2 = request.getParameter("n2");
+//		String op = request.getParameter("operation");
+//		//System.out.println(n1+ " " + op + " " + n2);
+//		String result = "";
+//		double first = Double.parseDouble(n1);
+//		double second = Double.parseDouble(n2);
+//		switch (op) {
+//		case "add": result = ""+ (first+second);
+//			break;
+//		case "subtract": result = ""+ (first-second);
+//			break;
+//		case "multiply": result = ""+ (first*second);
+//			break;
+//		case "divide": result = ""+ (first/second);
+//			break;
+//		default: result = "Invalid Operation";
+//			break;
+//		}
 		
 //		PrintWriter pw = response.getWriter();
 //		pw.write("<p>The answer is: " + result + "</p>");
 //		pw.write("<p><a href=\"Calculator.html\">More numbers please</a></p>");	
 		
-		request.setAttribute("answer", result);
+		request.setAttribute("answer", "result");
 		
 		RequestDispatcher rd = request.getRequestDispatcher("answer");
 		rd.forward(request, response);
